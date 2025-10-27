@@ -53,9 +53,8 @@ class DESCentralServer:
         """Setup shared encryption key"""
         print("\n[KEY SETUP]")
         print("-"*70)
-        print("Enter shared key (all devices must use this key)")
+        print("Enter shared key (all devices will use this key)")
         print("Press Enter to auto-generate key")
-        print("Examples: mykey123, password, 133457799BBCDFF1")
         print("-"*70)
         
         key_input = input("Shared Key: ").strip()
@@ -63,7 +62,7 @@ class DESCentralServer:
         if not key_input:
             key = generate_random_key()
             print(f"\n[KEY] Auto-generated: {key}")
-            print("[IMPORTANT] Share this key with both devices!")
+            print("[INFO] Key is shared with both devices")
         elif len(key_input) == 16 and all(c in '0123456789ABCDEFabcdef' for c in key_input):
             key = key_input.upper()
             print(f"[KEY] Using hex key: {key}")
