@@ -107,7 +107,6 @@ class DESDevice:
                     print(f"[INFO] Both devices connected! You can now chat.")
                     print(f"[INFO] Type your message and press Enter to send")
                     print(f"[INFO] Type 'quit' to disconnect")
-                    print(f"\n[{self.device_name}] ", end='', flush=True)
                     continue
                 
                 # Check if other device left
@@ -199,4 +198,5 @@ if __name__ == "__main__":
         server_port = 5555
     
     device = DESDevice(server_host=server_host, server_port=server_port)
+
     device.start()
